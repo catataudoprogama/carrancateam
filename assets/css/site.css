@@ -449,6 +449,15 @@ body.is-locked { overflow: hidden; }
 @media (min-width: 1000px) {
   .hdr:not(.is-solid) .brand { opacity: 0; pointer-events: none; }
 }
+/* tablet na horizontal: a navegação completa não cabia e os itens quebravam em duas linhas */
+@media (min-width: 1000px) and (max-width: 1180px) {
+  .hdr__in { gap: 16px; }
+  .brand { gap: 10px; }
+  .brand__t { font-size: 24px; }
+  .nav { gap: 14px; }
+  .nav a:not(.btn) { font-size: 15px; letter-spacing: .06em; white-space: nowrap; }
+  .nav .btn--sm { padding: 0 12px; font-size: 14px; white-space: nowrap; }
+}
 @media (max-width: 999px) {
   .burger { display: inline-flex; }
   .nav { position: fixed; inset: 0; z-index: -1; display: none; flex-direction: column; align-items: stretch; justify-content: center; gap: 4px; padding: 90px 24px 32px; background: var(--ink); }
@@ -486,17 +495,22 @@ body.is-locked { overflow: hidden; }
   .mod__tab small { display: none; }
   .mod__panel { min-height: 0; }
   .kids__media { order: 2; min-height: 460px; }
-  .units__map { position: static; }
+  .units__map { position: static; grid-template-columns: minmax(0, 1fr); }
+  .map__tabs button { min-width: 0; }
   .sched__units { grid-template-columns: 1fr 1fr; }
   .grid { display: none; }
   .dayview { display: block; }
   .fitbox { grid-template-columns: 1fr; }
   .foot__in { grid-template-columns: 1fr; }
+  /* grids de duas colunas que precisam empilhar: antes ficavam lado a lado e espremiam o texto (ou o formulário cobria a copy) */
+  .kids, .proof, .units, .faq, .final__in { grid-template-columns: minmax(0, 1fr); }
+  .kids { gap: 40px; }
+  .final__card { max-width: 560px; }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .btn--lg { width: 100%; }
-  .cta-row .btn { width: 100%; }
+  .cta-row .btn, .faq__head .btn { width: 100%; }
   .opts, .reviews, .f2, .pill4 { grid-template-columns: 1fr; }
   .rc { grid-template-columns: 1fr; }
   .rc .btn { width: 100%; }
@@ -726,7 +740,8 @@ body:not(.p-home) .hdr .brand { opacity: 1 !important; pointer-events: auto !imp
   .ugal { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 900px) {
-  .fx2, .tz2, .pick2, .cmp, .trk, .mh, .unit__body, .acv { grid-template-columns: 1fr; }
+  .fx2, .tz2, .pick2, .cmp, .trk, .mh, .unit__body, .acv { grid-template-columns: minmax(0, 1fr); }
+  .unitspg .wrap { grid-template-columns: minmax(0, 1fr); }
   .trk--rev .trk__ph { order: 0; }
   .trk__btn img, .trk__belt { aspect-ratio: 16 / 11; }
   .stats4 { grid-template-columns: 1fr 1fr; }
@@ -778,7 +793,16 @@ body:not(.p-home) .hdr .brand { opacity: 1 !important; pointer-events: auto !imp
 
 /* ---------- texto de apoio no H1 da página inicial (Fase 2 do SEO) ---------- */
 .h1 .kicker { margin-bottom: 14px; }
-@media (max-width: 400px) { .h1 .kicker { letter-spacing: .12em; } }
+@media (max-width: 400px) {
+  .h1 .kicker { letter-spacing: .12em; }
+  .eyebrow { flex-wrap: wrap; gap: 4px 10px; letter-spacing: .14em; }
+  /* botões de rótulo longo ("Agendar aula experimental") deixam de ser nowrap e quebram em vez de empurrar a coluna */
+  .btn { height: auto; min-height: 54px; padding: 10px 18px; white-space: normal; text-align: center; line-height: 1.05; }
+  .btn--lg { min-height: 60px; font-size: 19px; }
+  .btn--sm { min-height: 44px; }
+  .uinfo .btn, .fxcta .btn { height: auto; min-height: 50px; padding-block: 8px; }
+  .map__tabs button { padding-inline: 6px; font-size: 15px; letter-spacing: .03em; }
+}
 /* ---------- acessibilidade: contraste e alvos de toque (Fase 4 do SEO) ----------
    --red-text é o vermelho da marca ~8% mais escuro, usado só em TEXTO PEQUENO sobre o papel claro
    (4,8:1; o vermelho original dá 4,2:1). Botões, títulos grandes e decorações seguem com --red. */
