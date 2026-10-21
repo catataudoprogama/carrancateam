@@ -1,0 +1,13 @@
+# robots.txt da Carranca Team (https://carrancateam.com.br)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://carrancateam.com.br/sitemap.xml
+
+# Observações:
+# - Não bloqueie /assets/: o Google precisa do CSS, do JavaScript e das imagens para renderizar as páginas.
+# - Este arquivo libera o rastreamento. Em endereços de teste da hospedagem (antes do domínio final),
+#   NÃO use este arquivo: proteja o ambiente de teste com senha ou com "noindex" na própria hospedagem.
+# - robots.txt não esconde arquivos. Pastas internas (_fontes, _docs), fotos de origem e anotações
+#   não devem ser enviadas à hospedagem; não as liste aqui.

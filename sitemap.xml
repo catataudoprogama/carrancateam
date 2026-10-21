@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap da Carranca Team (https://carrancateam.com.br). Ver _docs/SEO-PENDENCIAS.md.
+  Atualize o lastmod de uma página quando o conteúdo dela mudar de forma relevante.
+  Depois de publicar, envie este arquivo no Google Search Console e no Bing Webmaster Tools.
+  Use sempre a mesma versão do endereço (aqui, sem www) que for o canônico. A página 404 não entra no sitemap.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://carrancateam.com.br/</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://carrancateam.com.br/faixas-brancas.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://carrancateam.com.br/unidades.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+  <url>
+    <loc>https://carrancateam.com.br/mestre-fabio.html</loc>
+    <lastmod>2026-10-20</lastmod>
+  </url>
+</urlset>
